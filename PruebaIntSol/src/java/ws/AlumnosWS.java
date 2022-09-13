@@ -11,11 +11,15 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import pojo.Alumno;
+import pojo.Respuesta;
 
 /**
  * REST Web Service
@@ -53,9 +57,10 @@ public class AlumnosWS {
     }
     */
     
+    //la anotaciones es para darle información adicional al copilador de como tratar el sistema
     @Path("all") //ruta
-    @GET //tipo de petición
-    @Produces(MediaType.APPLICATION_JSON) //cómo se regresa(recuperar) la información
+    @GET //tipo de petición, los parametros viajan sobre el cuerpo 
+    @Produces(MediaType.APPLICATION_JSON) //cómo se regresa(recuperar) la información el servicio 
     public List<Alumno> obtenerTodos(){
         List<Alumno> alumnos = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
@@ -67,5 +72,49 @@ public class AlumnosWS {
             alumnos.add(alum);
         }
         return alumnos;
+    }
+    
+    //orden de las anotaciones no importa
+    @Path("alumnobymatricula/{matricula},{nombre}") //no se recomienda diagonales, se utiliza aquí la diagonal para mandar el parámetro
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Alumno obtenerAlumno(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre){//el valor de PathParam debe ser igual al Path, no es necesario el valor que se manda sea igual al de los Path
+        Alumno alumno = new Alumno();
+        alumno.setMatricula(matricula);
+        alumno.setNombre(nombre);
+        alumno.setApellidos("Perez Sanchez");
+        alumno.setEdad(22);
+        return alumno;
+    }
+    
+    @Path("alumnodatos/{matricula},{nombre},{apellidos},{edad}") 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Alumno obtenerAlumnoDatos(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre, @PathParam("apellidos") String apellidos, @PathParam("edad") Integer edad){
+        Alumno alumno = new Alumno();
+        alumno.setMatricula(matricula);
+        alumno.setNombre(nombre);
+        alumno.setApellidos(apellidos);
+        alumno.setEdad(edad);
+        return alumno;
+    }
+    
+    @Path("registrar")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Respuesta registrar(@FormParam("matricula") String matricula, @FormParam("nombre") String nombre, @FormParam("apellidos") String apellidos, @FormParam("edad") Integer edad){
+        Respuesta respuesta = new Respuesta();
+        Alumno alumno = new Alumno();
+        
+        alumno.setMatricula(matricula);
+        alumno.setNombre(nombre);
+        alumno.setApellidos(apellidos);
+        alumno.setEdad(edad);
+        
+        respuesta.setError(false);
+        respuesta.setMensaje("Alumno agregado correctamente...");
+        respuesta.setAlumno(alumno);
+        
+        return respuesta;
     }
 }
