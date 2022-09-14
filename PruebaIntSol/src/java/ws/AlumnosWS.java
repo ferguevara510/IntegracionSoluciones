@@ -11,6 +11,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -75,10 +76,11 @@ public class AlumnosWS {
     }
     
     //orden de las anotaciones no importa
-    @Path("alumnobymatricula/{matricula},{nombre}") //no se recomienda diagonales, se utiliza aquí la diagonal para mandar el parámetro
+    @Path("alumnobymatricula/{matricula},{nombre}") //no se recomienda diagonales, se utiliza aquí la diagonal para mandar parámetro
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Alumno obtenerAlumno(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre){//el valor de PathParam debe ser igual al Path, no es necesario el valor que se manda sea igual al de los Path
+    public Alumno obtenerAlumno(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre){//el valor de 
+            //PathParam debe ser igual al Path, no es necesario el valor que se manda sea igual al de los Path
         Alumno alumno = new Alumno();
         alumno.setMatricula(matricula);
         alumno.setNombre(nombre);
@@ -90,7 +92,8 @@ public class AlumnosWS {
     @Path("alumnodatos/{matricula},{nombre},{apellidos},{edad}") 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Alumno obtenerAlumnoDatos(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre, @PathParam("apellidos") String apellidos, @PathParam("edad") Integer edad){
+    public Alumno obtenerAlumnoDatos(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre, 
+            @PathParam("apellidos") String apellidos, @PathParam("edad") Integer edad){
         Alumno alumno = new Alumno();
         alumno.setMatricula(matricula);
         alumno.setNombre(nombre);
@@ -102,7 +105,8 @@ public class AlumnosWS {
     @Path("registrar")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Respuesta registrar(@FormParam("matricula") String matricula, @FormParam("nombre") String nombre, @FormParam("apellidos") String apellidos, @FormParam("edad") Integer edad){
+    public Respuesta registrar(@FormParam("matricula") String matricula, @FormParam("nombre") String nombre, @FormParam("apellidos") 
+            String apellidos, @FormParam("edad") Integer edad){
         Respuesta respuesta = new Respuesta();
         Alumno alumno = new Alumno();
         
@@ -113,6 +117,43 @@ public class AlumnosWS {
         
         respuesta.setError(false);
         respuesta.setMensaje("Alumno agregado correctamente...");
+        respuesta.setAlumno(alumno);
+        
+        return respuesta;
+    }
+    
+    //Tarea: Método PUT no debe modificar la matricula devolviendo datos y DELETE ingresa la matricula para eliminar devolver datos
+    @Path("modificar/{matricula}")
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    public Respuesta modificar (@FormParam("matricula") String matricula, @FormParam("nombre") String nombre, @FormParam("apellidos") 
+            String apellidos, @FormParam("edad") Integer edad){
+        Respuesta respuesta = new Respuesta();
+        Alumno alumno = new Alumno();
+        
+        alumno.setMatricula(matricula);
+        alumno.setNombre(nombre);
+        alumno.setApellidos(apellidos);
+        alumno.setEdad(edad);
+                
+        respuesta.setError(false);
+        respuesta.setMensaje("Alumno modificado correctamente...");
+        respuesta.setAlumno(alumno);
+        
+        return respuesta;
+    }
+    
+    @Path("eliminar/{matricula}")
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public Respuesta eliminar (@PathParam("matricula") String matricula){
+        Respuesta respuesta = new Respuesta();
+        Alumno alumno = new Alumno();
+        
+        alumno.setMatricula(matricula);
+        
+        respuesta.setError(false);
+        respuesta.setMensaje("Alumno eliminado correctamente...");
         respuesta.setAlumno(alumno);
         
         return respuesta;
