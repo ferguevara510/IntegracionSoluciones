@@ -30,19 +30,27 @@ public class FXMLInicioController implements Initializable {
     
     @FXML
     private void clickBuscarMatricula(ActionEvent event) {
-        String matricula = tfMatricula.getText();
-        if(!matricula.isEmpty() && matricula.length() == 9){
-            mostrarAlerta("Matricula", "La matricula del alumno es: "+matricula);
-        }else{
-            mostrarAlerta("Campo incorrecto", "El formato de la matricula es incorrecto, favr de verificar");
-        }
+      String matricula = tfMatricula.getText();
+      if(!matricula.isEmpty() && matricula.length() == 9){
+        consultarAlumnoWS(matricula);
+      }else{
+        mostrarAlerta("Campo incorrecto", "El formato de la matricula es incorrecto, favr de verificar");
+      }
+    }
+    
+    private void consultarAlumnoWS(String matricula){
+      String url = "";
+      try {
+        
+      } catch (Exception e) {
+      }
     }
     
     private void mostrarAlerta(String titulo, String mensaje){
-        Alert dialogoAlerta = new Alert(Alert.AlertType.INFORMATION);
-        dialogoAlerta.setContentText(mensaje);
-        dialogoAlerta.setHeaderText("Hola");
-        dialogoAlerta.showAndWait();
+      Alert dialogoAlerta = new Alert(Alert.AlertType.INFORMATION);
+      dialogoAlerta.setContentText(mensaje);
+      dialogoAlerta.setHeaderText("Hola");
+      dialogoAlerta.showAndWait();
     }
     
     @Override
