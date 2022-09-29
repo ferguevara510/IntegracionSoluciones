@@ -6,15 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="287.0" prefWidth="622.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="javafxclientei.FXMLInicioController">
+<AnchorPane id="AnchorPane" prefHeight="287.0" prefWidth="622.0" style="-fx-background-color: #f6f092;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxclientei.FXMLInicioController">
    <children>
-      <Label layoutX="205.0" layoutY="23.0" text="Consumo de Servicios Web">
+      <Label layoutX="192.0" layoutY="21.0" text="Consumo de Servicios Web">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tfMatricula" layoutX="172.0" layoutY="96.0" prefHeight="26.0" prefWidth="252.0" promptText="Ingresa tu matricula S19030170" />
-      <Label fx:id="lbResultado" layoutX="320.0" layoutY="164.0" prefHeight="18.0" prefWidth="0.0" />
-      <Button fx:id="btnBuscar" layoutX="424.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickBuscarMatricula" text="Buscar" />
+      <TextField fx:id="tfMatricula" layoutX="160.0" layoutY="68.0" prefHeight="26.0" prefWidth="252.0" promptText="Ingresa tu matricula S19030170" />
+      <Label fx:id="lbResultado" layoutX="35.0" layoutY="120.0" prefHeight="64.0" prefWidth="552.0" wrapText="true">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Label>
+      <Button fx:id="btnBuscar" layoutX="410.0" layoutY="68.0" mnemonicParsing="false" onAction="#clickBuscarMatricula" text="Buscar" />
+      <Button fx:id="btnRegistro" layoutX="407.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickRegistro" text="Registrar Alumno" />
    </children>
 </AnchorPane>

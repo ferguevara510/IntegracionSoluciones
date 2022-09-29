@@ -76,14 +76,14 @@ public class AlumnosWS {
     }
     
     //orden de las anotaciones no importa
-    @Path("alumnobymatricula/{matricula},{nombre}") //no se recomienda diagonales, se utiliza aquí la diagonal para mandar parámetro
+    @Path("alumnobymatricula/{matricula}") //no se recomienda diagonales, se utiliza aquí la diagonal para mandar parámetro
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Alumno obtenerAlumno(@PathParam("matricula") String matricula, @PathParam("nombre") String nombre){//el valor de 
+    public Alumno obtenerAlumno(@PathParam("matricula") String matricula){//el valor de 
             //PathParam debe ser igual al Path, no es necesario el valor que se manda sea igual al de los Path
         Alumno alumno = new Alumno();
         alumno.setMatricula(matricula);
-        alumno.setNombre(nombre);
+        alumno.setNombre("Juanita");
         alumno.setApellidos("Perez Sanchez");
         alumno.setEdad(22);
         return alumno;
