@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="714.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLRegistrarMedicoController">
+   <children>
+      <Label layoutX="114.0" layoutY="18.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
+         <font>
+            <Font name="Felix Titling" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="33.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icono.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="31.0" layoutY="180.0" prefHeight="23.0" prefWidth="202.0" text="Fecha de Nacimiento">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="99.0" prefHeight="23.0" prefWidth="202.0" text="Nombre del Medico">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombreMedicoTf" layoutX="244.0" layoutY="97.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa el nombre del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="apellidoMedicoTf" layoutX="244.0" layoutY="137.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa los apellidos del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="31.0" layoutY="139.0" prefHeight="23.0" prefWidth="202.0" text="Apellidos del Medico">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="222.0" prefHeight="23.0" prefWidth="202.0" text="Genero">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="generoMedicoCb" layoutX="244.0" layoutY="221.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona el genero del Medico" />
+      <Button fx:id="cerrarBtn" layoutX="33.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarBtn" layoutX="604.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="32.0" layoutY="344.0" text="No. Cedula Profesional">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="263.0" prefHeight="23.0" prefWidth="202.0" text="Domicilio del Medico">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="domicilioMedicoTf" layoutX="244.0" layoutY="261.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa el domicilio del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="noPersonalTf" layoutX="244.0" layoutY="301.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa el no. personal del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="noCedulaProfesionalTf" layoutX="244.0" layoutY="342.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa el no de cedula profesional del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="31.0" layoutY="303.0" prefHeight="23.0" prefWidth="202.0" text="No. Personal">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="385.0" prefHeight="23.0" prefWidth="202.0" text="Contraseña">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="contrasenaTf" layoutX="244.0" layoutY="383.0" prefHeight="28.0" prefWidth="438.0" promptText="Ingresa la contraseña del Medico" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="31.0" layoutY="424.0" prefHeight="23.0" prefWidth="202.0" text="Rol">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="rolCb" layoutX="244.0" layoutY="423.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona el rol del Medico" />
+      <DatePicker fx:id="fechaNacMedicoDp" layoutX="244.0" layoutY="179.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona la fecha de naciemiento del Medico" />
+   </children>
+</AnchorPane>
