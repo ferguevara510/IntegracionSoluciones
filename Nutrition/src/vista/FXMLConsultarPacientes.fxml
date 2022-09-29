@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="1333.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLConsultarPacientesController">
+   <children>
+      <Label layoutX="111.0" layoutY="17.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
+         <font>
+            <Font name="Felix Titling" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="30.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icono.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="buscarPacienteTf" layoutX="391.0" layoutY="77.0" prefHeight="28.0" prefWidth="849.0" promptText="Insertar el nombre del Paciente a buscar" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="buscarEmpleadoBtn" layoutX="1249.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#consultar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="cerrarBtn" layoutX="22.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registroPacienteBtn" layoutX="1071.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="editarPacienteBtn" layoutX="1160.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminarPacienteBtn" layoutX="1230.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#eliminar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutX="19.0" layoutY="125.0" prefHeight="435.0" prefWidth="1295.0" style="-fx-background-color: #EFEBE9#FFCC80;">
+         <columns>
+            <TableColumn fx:id="col_nombrePaciente" prefWidth="160.79999351501465" text="Nombre" />
+            <TableColumn fx:id="col_apellidosPaciente" prefWidth="145.5999755859375" text="Apellidos" />
+            <TableColumn fx:id="col_fechaNacPaciente" minWidth="0.0" prefWidth="108.0" text="Fecha Nac." />
+            <TableColumn fx:id="col_generoPaciente" minWidth="0.0" prefWidth="80.79998779296875" text="Genero" />
+            <TableColumn fx:id="col_Peso" minWidth="0.0" prefWidth="59.20001220703125" text="Peso" />
+            <TableColumn fx:id="col_estatura" minWidth="0.0" prefWidth="86.4000244140625" text="Estatura" />
+            <TableColumn fx:id="col_tallaIncial" minWidth="0.0" prefWidth="90.39996337890625" text="Talla Incial" />
+            <TableColumn fx:id="col_correo" minWidth="0.0" prefWidth="207.20001220703125" text="Correo" />
+            <TableColumn fx:id="col_domicilioPaciente" minWidth="0.0" prefWidth="203.20001220703125" text="Domicilio" />
+            <TableColumn fx:id="col_medico" minWidth="0.0" prefWidth="149.5999755859375" text="Medico" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
