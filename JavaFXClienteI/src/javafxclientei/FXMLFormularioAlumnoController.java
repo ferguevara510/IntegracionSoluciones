@@ -5,6 +5,7 @@
  */
 package javafxclientei;
 
+import com.google.gson.Gson;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import modelo.ConexionServiciosWeb;
+import pojos.Respuesta;
 import utilidades.Constantes;
 
 /**
@@ -57,7 +59,13 @@ public class FXMLFormularioAlumnoController implements Initializable {
     String parametros = "matricula="+matricula+"&nombre="+nombre+"&apellidos="+apellidos+"&edad="+edad;
     try {
       String resultado = ConexionServiciosWeb.consumirServiciosPOST(url, parametros);
-      mostrarAlerta("REsultado WS", resultado);
+      Gson gson = new Gson();
+      Respuesta respuestaWS = gson.fromJson(resultado, Respuesta.class);
+      String info = "Matricula alumno: "+ respuestaWS.getAlumno().getMatricula()
+              +"\nNombre: "+respuestaWS.getAlumno().getNombre()
+              +"\nApellidos: "+respuestaWS.getAlumno().getApellidos()
+              +"\nEdad: "+respuestaWS.getAlumno().getEdad();
+      mostrarAlerta("Resultado WS", info);
     } catch (Exception e) {
       mostrarAlerta("ERROR", "Error en peticón POST: "+e.getMessage());
     }
