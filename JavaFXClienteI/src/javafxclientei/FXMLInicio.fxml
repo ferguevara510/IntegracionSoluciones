@@ -14,11 +14,11 @@
          </font>
       </Label>
       <TextField fx:id="tfMatricula" layoutX="160.0" layoutY="68.0" prefHeight="26.0" prefWidth="252.0" promptText="Ingresa tu matricula S19030170" />
-      <Label fx:id="lbResultado" layoutX="35.0" layoutY="120.0" prefHeight="64.0" prefWidth="552.0" wrapText="true">
+      <Label fx:id="lbResultado" layoutX="35.0" layoutY="120.0" prefHeight="84.0" prefWidth="552.0" wrapText="true">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font></Label>
-      <Button fx:id="btnBuscar" layoutX="410.0" layoutY="68.0" mnemonicParsing="false" onAction="#clickBuscarMatricula" text="Buscar" />
-      <Button fx:id="btnRegistro" layoutX="407.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickRegistro" text="Registrar Alumno" />
+      <Button fx:id="btnBuscar" layoutX="410.0" layoutY="68.0" mnemonicParsing="false" onAction="#clickBuscarMatricula" style="-fx-background-color: #d0ccfb;" text="Buscar" />
+      <Button fx:id="btnRegistro" layoutX="407.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickRegistro" style="-fx-background-radius: 55; -fx-background-color: #d0ccfb;" text="Registrar Alumno" />
    </children>
 </AnchorPane>

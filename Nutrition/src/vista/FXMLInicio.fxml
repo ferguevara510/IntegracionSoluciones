@@ -11,11 +11,6 @@
 
 <AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="377.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLInicioController">
    <children>
-      <Button fx:id="iniciarSesionBtn" layoutX="135.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#iniciarSesion" style="-fx-background-radius: 55; -fx-background-color: #9cf79d;" text="Iniciar Sesión" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
-         <font>
-            <Font name="Century Gothic Bold" size="15.0" />
-         </font>
-      </Button>
       <Label layoutX="101.0" layoutY="14.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
          <font>
             <Font name="Felix Titling" size="36.0" />
@@ -31,14 +26,14 @@
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="usuarioTf" alignment="TOP_LEFT" layoutX="91.0" layoutY="138.0" prefHeight="26.0" prefWidth="196.0" promptText="Ingresa tu usuario" style="-fx-background-color: #EFEBE9;">
+      <TextField fx:id="usuarioTf" alignment="CENTER" layoutX="91.0" layoutY="138.0" prefHeight="26.0" prefWidth="196.0" promptText="Ingresa tu usuario" style="-fx-background-color: #EFEBE9;">
          <cursor>
          </cursor>
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="contraseñaPf" layoutX="91.0" layoutY="207.0" prefHeight="24.0" prefWidth="196.0" style="-fx-background-color: #EFEBE9;">
+      <PasswordField fx:id="contraseñaPf" alignment="CENTER" layoutX="91.0" layoutY="207.0" prefHeight="28.0" prefWidth="196.0" promptText="Ingresa tu contraseña" style="-fx-background-color: #EFEBE9;">
          <font>
             <Font name="Century Gothic" size="13.0" />
          </font>
@@ -48,5 +43,10 @@
             <Image url="@img/icono.png" />
          </image>
       </ImageView>
+      <Button fx:id="iniciarSesionBtn" layoutX="135.0" layoutY="255.0" mnemonicParsing="false" onAction="#clickiniciarSesion" style="-fx-background-radius: 55; -fx-background-color: #9cf79d;" text="Iniciar Sesión">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

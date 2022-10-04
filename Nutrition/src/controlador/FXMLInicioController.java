@@ -7,6 +7,7 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -37,7 +38,7 @@ public class FXMLInicioController implements Initializable {
   }  
 
   @FXML
-  private void iniciarSesion(MouseEvent event) {
+  private void clickiniciarSesion(ActionEvent event) {
   }
   
 }
