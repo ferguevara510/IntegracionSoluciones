@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="1203.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLConsultarMedicosController">
+   <children>
+      <Label layoutX="111.0" layoutY="20.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
+         <font>
+            <Font name="Felix Titling" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="30.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/icono.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="buscarMedicoTf" layoutX="397.0" layoutY="80.0" prefHeight="28.0" prefWidth="710.0" promptText="Insertar el nombre del Medico a buscar" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="buscarMedicoBtn" layoutX="1117.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#consultar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="cerrarBtn" layoutX="22.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registroMedicoBtn" layoutX="941.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="editarMedicoBtn" layoutX="1030.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminarMedicoBtn" layoutX="1100.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#eliminar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutX="20.0" layoutY="126.0" prefHeight="435.0" prefWidth="1162.0" style="-fx-background-color: #EFEBE9#FFCC80;">
+         <columns>
+            <TableColumn fx:id="col_nombreMedico" prefWidth="160.79999351501465" text="Nombre" />
+            <TableColumn fx:id="col_apellidosMedico" prefWidth="145.5999755859375" text="Apellidos" />
+            <TableColumn fx:id="col_fechaNacMedico" minWidth="0.0" prefWidth="108.0" text="Fecha Nac." />
+            <TableColumn fx:id="col_genero" minWidth="0.0" prefWidth="109.5999755859375" text="Genero" />
+            <TableColumn fx:id="col_direccionMedico" minWidth="0.0" prefWidth="196.80001831054688" text="Dirección" />
+            <TableColumn fx:id="col_noPersonal" minWidth="0.0" prefWidth="110.4000244140625" text="No. Personal" />
+            <TableColumn fx:id="col_noCedula" minWidth="0.0" prefWidth="100.800048828125" text="No. Cedula" />
+            <TableColumn fx:id="col_rol" minWidth="0.0" prefWidth="100.0" text="Rol" />
+            <TableColumn fx:id="col_fotografia" minWidth="0.0" prefWidth="133.59991455078125" text="Fotografía" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
