@@ -7,6 +7,7 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -26,8 +27,6 @@ public class FXMLConsultarMedicosController implements Initializable {
   @FXML
   private Button cerrarBtn;
   @FXML
-  private Button buscarMedicoBtn;
-  @FXML
   private Button registroMedicoBtn;
   @FXML
   private Button editarMedicoBtn;
@@ -36,25 +35,27 @@ public class FXMLConsultarMedicosController implements Initializable {
   @FXML
   private TableView<Medico> table;
   @FXML
-  private TableColumn<Medico, ?> col_nombreMedico;
+  private TableColumn col_nombreMedico;
   @FXML
-  private TableColumn<Medico, ?> col_apellidosMedico;
+  private TableColumn col_apellidosMedico;
   @FXML
-  private TableColumn<Medico, ?> col_fechaNacMedico;
+  private TableColumn col_fechaNacMedico;
   @FXML
-  private TableColumn<Medico, ?> col_genero;
+  private TableColumn col_genero;
   @FXML
-  private TableColumn<Medico, ?> col_direccionMedico;
+  private TableColumn col_direccionMedico;
   @FXML
-  private TableColumn<Medico, ?> col_noPersonal;
+  private TableColumn col_noPersonal;
   @FXML
-  private TableColumn<Medico, ?> col_noCedula;
+  private TableColumn col_noCedula;
   @FXML
-  private TableColumn<Medico, ?> col_rol;
+  private TableColumn col_rol;
   @FXML
-  private TableColumn<Medico, ?> col_fotografia;
+  private TableColumn col_fotografia;
   @FXML
   private TextField buscarMedicoTf;
+  @FXML
+  private Button buscarBtn;
 
   /**
    * Initializes the controller class.
@@ -65,23 +66,7 @@ public class FXMLConsultarMedicosController implements Initializable {
   }  
 
   @FXML
-  private void consultar(MouseEvent event) {
-  }
-
-  @FXML
-  private void regresar(MouseEvent event) {
-  }
-
-  @FXML
-  private void agregar(MouseEvent event) {
-  }
-
-  @FXML
-  private void editar(MouseEvent event) {
-  }
-
-  @FXML
-  private void eliminar(MouseEvent event) {
+  private void clickBuscar(ActionEvent event) {
   }
   
 }

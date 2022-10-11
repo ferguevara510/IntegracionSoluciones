@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="520.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLEditarAlimentoController">
+<AnchorPane id="AnchorPane" prefHeight="270.0" prefWidth="770.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLEditarAlimentoController">
    <children>
       <Label layoutX="114.0" layoutY="18.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
          <font>
@@ -21,51 +21,51 @@
             <Image url="@img/icono.png" />
          </image>
       </ImageView>
-      <TextField fx:id="nombreAlimentoTf" layoutX="238.0" layoutY="97.0" prefHeight="28.0" prefWidth="255.0" style="-fx-background-color: #EFEBE9;">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="caloriasTf" layoutX="238.0" layoutY="137.0" prefHeight="28.0" prefWidth="255.0" style="-fx-background-color: #EFEBE9;">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="cantidadTf" layoutX="238.0" layoutY="178.0" prefHeight="28.0" prefWidth="255.0" style="-fx-background-color: #EFEBE9;">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </TextField>
-      <ComboBox fx:id="porcionCb" layoutX="238.0" layoutY="221.0" prefHeight="26.0" prefWidth="255.0" />
-      <Button fx:id="cerrarBtn" layoutX="25.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+      <Button fx:id="cerrarBtn" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="editarBtn" layoutX="434.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
+      <Button fx:id="editarBtn" layoutX="684.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="26.0" layoutY="179.0" prefHeight="23.0" prefWidth="187.0" text="Cantidad">
+      <Label layoutX="27.0" layoutY="164.0" prefHeight="23.0" prefWidth="187.0" text="Cantidad">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="98.0" text="Nombre del Alimento">
+      <Label layoutX="27.0" layoutY="97.0" text="Nombre del Alimento">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="138.0" prefHeight="23.0" prefWidth="187.0" text="Calorías">
+      <TextField fx:id="nombreAlimentoTf" layoutX="26.0" layoutY="121.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="caloriasTf" layoutX="397.0" layoutY="121.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="cantidadTf" layoutX="27.0" layoutY="187.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: #EFEBE9;">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="397.0" layoutY="97.0" prefHeight="23.0" prefWidth="187.0" text="Calorías">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="221.0" prefHeight="23.0" prefWidth="187.0" text="Porción">
+      <Label layoutX="397.0" layoutY="164.0" prefHeight="23.0" prefWidth="187.0" text="Porción">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
+      <ComboBox fx:id="porcionCb" layoutX="397.0" layoutY="189.0" prefHeight="26.0" prefWidth="346.0" />
    </children>
 </AnchorPane>

@@ -21,10 +21,7 @@ public class Nutrition extends Application {
   
   @Override
   public void start(Stage stage) throws Exception {
-    //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLInicio.fxml")));
-    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLConsultarAlimentos.fxml")));
-    //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLConsultarMedicos.fxml")));
-    //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLConsultarPacientes.fxml")));
+    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLInicio.fxml")));
     //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLRegistrarAlimento.fxml")));
     //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLRegistrarMedico.fxml")));
     //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vista/FXMLRegistrarPaciente.fxml")));
