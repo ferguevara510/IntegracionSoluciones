@@ -3,7 +3,17 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="TU_ID">
-
-
+<mapper namespace="medicos">
+  <select id="getAllMedicos" resultType="pojos.Medico">
+    SELECT idMedico, medico.nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, idRol, catalogo.nombre as 'rol'
+    FROM medico
+    INNER JOIN catalogo
+    ON medico.idRol = catalogo.idCatalogo
+  </select>
+  
+  <select id="getByid" resultType="pojos.Medico" parameterType="">
+    SELECT * 
+    FROM medico
+    WHERE idMedico = 1 #{id}    
+  </select>
 </mapper>
