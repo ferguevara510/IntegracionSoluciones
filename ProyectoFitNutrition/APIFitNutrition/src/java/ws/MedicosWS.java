@@ -5,6 +5,7 @@
  */
 package ws;
 
+import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -17,6 +18,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import mybatis.MyBatisUtil;
+import org.apache.ibatis.session.SqlSession;
+import pojos.Medico;
 
 /**
  * REST Web Service
@@ -35,15 +39,37 @@ public class MedicosWS {
   @Path("all")
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public String buscarTodos(){
-    return "";
+  public List<Medico> buscarTodos(){
+    List<Medico> listaMedicos = null;
+    SqlSession conexionBD = MyBatisUtil.getSession();
+    if (conexionBD != null) {
+      try {
+        listaMedicos = conexionBD.selectList("medicos.getAllMedicos");
+      } catch (Exception e) {
+        e.printStackTrace();
+      } finally{
+        conexionBD.close();
+      }
+    }
+    return listaMedicos;
   }
   
   @Path("byId/{id}")
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public String buscarMedico(@PathParam("id") Integer idMedico){
-    return "ID recibido: "+idMedico;
+  public Medico buscarMedico(@PathParam("id") Integer idMedico){
+    Medico medico = null;
+    SqlSession conexionBD = MyBatisUtil.getSession();
+    if (conexionBD != null) {
+      try {
+        medico = conexionBD.selectOne("medicos.getById", idMedico);
+      } catch (Exception e) {
+        e.printStackTrace();
+      } finally{
+        conexionBD.close();
+      }
+    }
+    return medico;
   }
 
   @Path("registrar")
