@@ -27,26 +27,6 @@
             <Font name="Century Gothic" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="cerrarBtn" layoutX="22.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="registroMedicoBtn" layoutX="941.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editarMedicoBtn" layoutX="1030.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="eliminarMedicoBtn" layoutX="1100.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#eliminar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <TableView fx:id="table" layoutX="20.0" layoutY="126.0" prefHeight="435.0" prefWidth="1162.0" style="-fx-background-color: #EFEBE9#FFCC80;">
          <columns>
             <TableColumn fx:id="col_nombreMedico" prefWidth="160.79999351501465" text="Nombre" />
@@ -60,6 +40,29 @@
             <TableColumn fx:id="col_fotografia" minWidth="0.0" prefWidth="133.59991455078125" text="Fotografía" />
          </columns>
       </TableView>
-      <Button fx:id="buscarBtn" layoutX="1119.0" layoutY="81.0" mnemonicParsing="false" onAction="#clickBuscar" text="Buscar" />
+      <Button fx:id="buscarBtn" layoutX="1117.0" layoutY="80.0" mnemonicParsing="false" onAction="#buscarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
+      <Button fx:id="regresarBtn" layoutX="20.0" layoutY="576.0" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminarBtn" layoutX="1113.0" layoutY="576.0" mnemonicParsing="false" onAction="#eliminarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificarBtn" layoutX="1023.0" layoutY="576.0" mnemonicParsing="false" onAction="#modificarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Modificar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarBtn" layoutX="940.0" layoutY="576.0" mnemonicParsing="false" onAction="#registrarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

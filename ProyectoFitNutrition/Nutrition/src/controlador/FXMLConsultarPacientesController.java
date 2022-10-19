@@ -7,14 +7,22 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.Paciente;
+import util.Utilidades;
 
 /**
  * FXML Controller class
@@ -24,39 +32,39 @@ import modelo.Paciente;
 public class FXMLConsultarPacientesController implements Initializable {
 
   @FXML
-  private Button buscarEmpleadoBtn;
-  @FXML
-  private Button cerrarBtn;
-  @FXML
-  private Button registroPacienteBtn;
-  @FXML
-  private Button editarPacienteBtn;
-  @FXML
-  private Button eliminarPacienteBtn;
-  @FXML
   private TableView<Paciente> table;  
   @FXML
-  private TableColumn<Paciente, ?> col_nombrePaciente;
+  private TableColumn col_nombrePaciente;
   @FXML
-  private TableColumn<Paciente, ?> col_apellidosPaciente;
+  private TableColumn col_apellidosPaciente;
   @FXML
-  private TableColumn<Paciente, ?> col_fechaNacPaciente;
+  private TableColumn col_fechaNacPaciente;
   @FXML
-  private TableColumn<Paciente, ?> col_generoPaciente;
+  private TableColumn col_generoPaciente;
   @FXML
-  private TableColumn<Paciente, ?> col_Peso;
+  private TableColumn col_Peso;
   @FXML
-  private TableColumn<Paciente, ?> col_estatura;
+  private TableColumn col_estatura;
   @FXML
-  private TableColumn<Paciente, ?> col_tallaIncial;
+  private TableColumn col_tallaIncial;
   @FXML
-  private TableColumn<Paciente, ?> col_correo;
+  private TableColumn col_correo;
   @FXML
-  private TableColumn<Paciente, ?> col_domicilioPaciente;
+  private TableColumn col_domicilioPaciente;
   @FXML
-  private TableColumn<Paciente, ?> col_medico;
+  private TableColumn col_medico;
   @FXML
   private TextField buscarPacienteTf;
+  @FXML
+  private Button buscarBtn;
+  @FXML
+  private Button eliminarBtn;
+  @FXML
+  private Button modificarBtn;
+  @FXML
+  private Button regresarBtn;
+  @FXML
+  private Button registrarBtn;
   
   /**
    * Initializes the controller class.
@@ -67,23 +75,48 @@ public class FXMLConsultarPacientesController implements Initializable {
   }  
 
   @FXML
-  private void consultar(MouseEvent event) {
+  private void buscarPaciente(ActionEvent event) {
   }
 
   @FXML
-  private void regresar(MouseEvent event) {
+  private void eliminarPaciente(ActionEvent event) {
   }
 
   @FXML
-  private void agregar(MouseEvent event) {
+  private void modificarPaciente(ActionEvent event) {
   }
 
   @FXML
-  private void editar(MouseEvent event) {
+  private void regresar(ActionEvent event) {
+    try {
+      Parent vistaPrincipal = FXMLLoader.load(getClass().getResource("/vista/FXMLPrincipal.fxml"));
+      Scene escenaPrincipal = new Scene(vistaPrincipal);
+      Stage escenarioBase = new Stage();
+      escenarioBase.setScene(escenaPrincipal);
+      escenarioBase.show();
+      escenarioBase.setResizable(false);
+      escenarioBase.setTitle("Principal");
+      escenarioBase.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la pantalla principal", Alert.AlertType.ERROR);
+    }
   }
 
   @FXML
-  private void eliminar(MouseEvent event) {
+  private void registrarPaciente(ActionEvent event) {
+    try {
+      Parent vistaAlimentos = FXMLLoader.load(getClass().getResource("/vista/FXMLRegistrarPaciente.fxml"));
+      Scene escenaPrincipal = new Scene(vistaAlimentos);
+      Stage escenarioRegistro = new Stage();
+      escenarioRegistro.setScene(escenaPrincipal);
+      escenarioRegistro.initModality(Modality.APPLICATION_MODAL);
+      escenarioRegistro.showAndWait();
+      escenarioRegistro.setResizable(false);
+      escenarioRegistro.setTitle("RegistrarMedico");
+      escenarioRegistro.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la registro de paciente", Alert.AlertType.ERROR);
+    }
   }
   
 }

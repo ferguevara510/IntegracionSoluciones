@@ -43,9 +43,9 @@
             <Image url="@img/icono.png" />
          </image>
       </ImageView>
-      <Button fx:id="iniciarSesionBtn" layoutX="135.0" layoutY="255.0" mnemonicParsing="false" onAction="#clickiniciarSesion" style="-fx-background-radius: 55; -fx-background-color: #9cf79d;" text="Iniciar Sesión">
+      <Button fx:id="iniciarSesionBtn" layoutX="136.0" layoutY="256.0" mnemonicParsing="false" onAction="#iniciarsesion" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Iniciar Sesión">
          <font>
-            <Font size="15.0" />
+            <Font name="Century Gothic" size="14.0" />
          </font>
       </Button>
    </children>

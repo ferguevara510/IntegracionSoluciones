@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import util.Utilidades;
@@ -44,7 +45,7 @@ public class FXMLPrincipalController implements Initializable {
   }  
 
   @FXML
-  private void clickPacientes(ActionEvent event) {
+  private void consultarPacientes(ActionEvent event) {
     try {
       Parent vistaPacientes = FXMLLoader.load(getClass().getResource("/vista/FXMLConsultarPacientes.fxml"));
       Scene escenaPrincipal = new Scene(vistaPacientes);
@@ -52,13 +53,16 @@ public class FXMLPrincipalController implements Initializable {
       escenarioPacientes.setScene(escenaPrincipal);
       escenarioPacientes.initModality(Modality.APPLICATION_MODAL);
       escenarioPacientes.showAndWait();
+      escenarioPacientes.setResizable(false);
+      escenarioPacientes.setTitle("ConsultarPacientes");
+      escenarioPacientes.getIcons().add(new Image("/vista/img/icono.png"));
     } catch (Exception ex) {
       Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar pacientes", Alert.AlertType.ERROR);
     }
   }
 
   @FXML
-  private void clickAlimentos(ActionEvent event) {
+  private void consultarAlimentos(ActionEvent event) {
     try {
       Parent vistaAlimentos = FXMLLoader.load(getClass().getResource("/vista/FXMLConsultarAlimentos.fxml"));
       Scene escenaPrincipal = new Scene(vistaAlimentos);
@@ -66,33 +70,42 @@ public class FXMLPrincipalController implements Initializable {
       escenarioAlimentos.setScene(escenaPrincipal);
       escenarioAlimentos.initModality(Modality.APPLICATION_MODAL);
       escenarioAlimentos.showAndWait();
+      escenarioAlimentos.setResizable(false);
+      escenarioAlimentos.setTitle("ConsultarAlimentos");
+      escenarioAlimentos.getIcons().add(new Image("/vista/img/icono.png"));
     } catch (Exception ex) {
-      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar medicos", Alert.AlertType.ERROR);
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar alimentos", Alert.AlertType.ERROR);
     }
   }
 
   @FXML
-  private void clickMedicos(ActionEvent event) {
+  private void consultarMedicos(ActionEvent event) {
     try {
       Parent vistaMedicos = FXMLLoader.load(getClass().getResource("/vista/FXMLConsultarMedicos.fxml"));
       Scene escenaPrincipal = new Scene(vistaMedicos);
-      Stage escenarioMedicos = new Stage();
+      Stage escenarioMedicos= new Stage();
       escenarioMedicos.setScene(escenaPrincipal);
       escenarioMedicos.initModality(Modality.APPLICATION_MODAL);
       escenarioMedicos.showAndWait();
+      escenarioMedicos.setResizable(false);
+      escenarioMedicos.setTitle("ConsultarMedicos");
+      escenarioMedicos.getIcons().add(new Image("/vista/img/icono.png"));
     } catch (Exception ex) {
       Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar medicos", Alert.AlertType.ERROR);
     }
   }
 
   @FXML
-  private void clickCerrarSesion(ActionEvent event) {
+  private void cerrarSesion(ActionEvent event) {
     try {
       Parent vistaPrincipal = FXMLLoader.load(getClass().getResource("/vista/FXMLInicio.fxml"));
       Scene escenaPrincipal = new Scene(vistaPrincipal);
       Stage escenarioBase = (Stage) cerrarSesionBtn.getScene().getWindow();
       escenarioBase.setScene(escenaPrincipal);
+      escenarioBase.setTitle("IniciarSesion");
       escenarioBase.show();
+      escenarioBase.setResizable(false);
+      escenarioBase.getIcons().add(new Image("/vista/img/icono.png"));
     } catch (Exception ex) {
       Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la pantalla principal", Alert.AlertType.ERROR);
     }

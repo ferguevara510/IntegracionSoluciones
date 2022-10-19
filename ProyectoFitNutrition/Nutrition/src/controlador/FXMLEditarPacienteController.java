@@ -7,15 +7,23 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.Medico;
 import modelo.enums.GeneroEnum;
+import util.Utilidades;
 
 /**
  * FXML Controller class
@@ -24,10 +32,6 @@ import modelo.enums.GeneroEnum;
  */
 public class FXMLEditarPacienteController implements Initializable {
 
-  @FXML
-  private Button cerrarBtn;
-  @FXML
-  private Button editarPacienteBtn;
   @FXML
   private ComboBox<GeneroEnum> generoPacienteCb;
   @FXML
@@ -54,6 +58,10 @@ public class FXMLEditarPacienteController implements Initializable {
   private TextField correoTf;
   @FXML
   private DatePicker fechaNacPacienteDp;
+  @FXML
+  private Button regresarBtn;
+  @FXML
+  private Button modificarPacienteBtn;
 
   /**
    * Initializes the controller class.
@@ -64,11 +72,24 @@ public class FXMLEditarPacienteController implements Initializable {
   }  
 
   @FXML
-  private void regresar(MouseEvent event) {
+  private void regresarConsultar(ActionEvent event) {
+    try {
+      Parent vistaPacientes = FXMLLoader.load(getClass().getResource("/vista/FXMLConsultarPacientes.fxml"));
+      Scene escenaPrincipal = new Scene(vistaPacientes);
+      Stage escenarioPacientes = new Stage();
+      escenarioPacientes.setScene(escenaPrincipal);
+      escenarioPacientes.initModality(Modality.APPLICATION_MODAL);
+      escenarioPacientes.showAndWait();
+      escenarioPacientes.setResizable(false);
+      escenarioPacientes.setTitle("ConsultarPacientes");
+      escenarioPacientes.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar pacientes", Alert.AlertType.ERROR);
+    }
   }
 
   @FXML
-  private void agregar(MouseEvent event) {
+  private void modificarPaciente(ActionEvent event) {
   }
   
 }

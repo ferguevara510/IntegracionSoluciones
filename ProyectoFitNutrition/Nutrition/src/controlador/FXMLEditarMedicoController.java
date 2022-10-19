@@ -7,15 +7,24 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.enums.GeneroEnum;
 import modelo.enums.RolEnum;
+import util.Utilidades;
 
 /**
  * FXML Controller class
@@ -24,10 +33,6 @@ import modelo.enums.RolEnum;
  */
 public class FXMLEditarMedicoController implements Initializable {
 
-  @FXML
-  private Button cerrarBtn;
-  @FXML
-  private Button editarBtn;
   @FXML
   private ComboBox<GeneroEnum> generoMedicoCb;
   @FXML
@@ -46,6 +51,10 @@ public class FXMLEditarMedicoController implements Initializable {
   private TextField contrasenaTf;
   @FXML
   private DatePicker fechaNacMedicoDp;
+  @FXML
+  private Button regresarBtn;
+  @FXML
+  private Button modificarMedicoBtn;
 
   /**
    * Initializes the controller class.
@@ -56,11 +65,24 @@ public class FXMLEditarMedicoController implements Initializable {
   }  
 
   @FXML
-  private void regresar(MouseEvent event) {
+  private void regresarConsultar(ActionEvent event) {
+    try {
+      Parent vistaMedicos = FXMLLoader.load(getClass().getResource("/vista/FXMLConsultarMedicos.fxml"));
+      Scene escenaPrincipal = new Scene(vistaMedicos);
+      Stage escenarioMedicos= new Stage();
+      escenarioMedicos.setScene(escenaPrincipal);
+      escenarioMedicos.initModality(Modality.APPLICATION_MODAL);
+      escenarioMedicos.showAndWait();
+      escenarioMedicos.setResizable(false);
+      escenarioMedicos.setTitle("ConsultarMedicos");
+      escenarioMedicos.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la consultar medicos", Alert.AlertType.ERROR);
+    }
   }
 
   @FXML
-  private void agregar(MouseEvent event) {
+  private void modificarMedico(ActionEvent event) {
   }
   
 }

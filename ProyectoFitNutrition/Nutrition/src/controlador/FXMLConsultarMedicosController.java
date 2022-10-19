@@ -9,13 +9,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.Medico;
+import util.Utilidades;
 
 /**
  * FXML Controller class
@@ -24,14 +31,6 @@ import modelo.Medico;
  */
 public class FXMLConsultarMedicosController implements Initializable {
 
-  @FXML
-  private Button cerrarBtn;
-  @FXML
-  private Button registroMedicoBtn;
-  @FXML
-  private Button editarMedicoBtn;
-  @FXML
-  private Button eliminarMedicoBtn;
   @FXML
   private TableView<Medico> table;
   @FXML
@@ -56,6 +55,14 @@ public class FXMLConsultarMedicosController implements Initializable {
   private TextField buscarMedicoTf;
   @FXML
   private Button buscarBtn;
+  @FXML
+  private Button regresarBtn;
+  @FXML
+  private Button eliminarBtn;
+  @FXML
+  private Button modificarBtn;
+  @FXML
+  private Button registrarBtn;
 
   /**
    * Initializes the controller class.
@@ -66,7 +73,48 @@ public class FXMLConsultarMedicosController implements Initializable {
   }  
 
   @FXML
-  private void clickBuscar(ActionEvent event) {
+  private void buscarMedico(ActionEvent event) {
+  }
+
+  @FXML
+  private void regresar(ActionEvent event) {
+    try {
+      Parent vistaPrincipal = FXMLLoader.load(getClass().getResource("/vista/FXMLPrincipal.fxml"));
+      Scene escenaPrincipal = new Scene(vistaPrincipal);
+      Stage escenarioBase = new Stage();
+      escenarioBase.setScene(escenaPrincipal);
+      escenarioBase.show();
+      escenarioBase.setResizable(false);
+      escenarioBase.setTitle("Principal");
+      escenarioBase.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la pantalla principal", Alert.AlertType.ERROR);
+    }
+  }
+
+  @FXML
+  private void eliminarMedico(ActionEvent event) {
+  }
+
+  @FXML
+  private void modificarMedico(ActionEvent event) {
+  }
+
+  @FXML
+  private void registrarMedico(ActionEvent event) {
+    try {
+      Parent vistaMedicos = FXMLLoader.load(getClass().getResource("/vista/FXMLRegistrarMedico.fxml"));
+      Scene escenaPrincipal = new Scene(vistaMedicos);
+      Stage escenarioRegistro = new Stage();
+      escenarioRegistro.setScene(escenaPrincipal);
+      escenarioRegistro.initModality(Modality.APPLICATION_MODAL);
+      escenarioRegistro.showAndWait();
+      escenarioRegistro.setResizable(false);
+      escenarioRegistro.setTitle("RegistrarMedico");
+      escenarioRegistro.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la registro de medico", Alert.AlertType.ERROR);
+    }
   }
   
 }

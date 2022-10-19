@@ -57,12 +57,12 @@
          </font>
       </Label>
       <ComboBox fx:id="porcionCb" layoutX="397.0" layoutY="190.0" prefHeight="26.0" prefWidth="346.0" promptText="Selecciona la Porción del Alimento" />
-      <Button fx:id="cerrarBtn" layoutX="30.0" layoutY="231.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+      <Button fx:id="regresarBtn" layoutX="26.0" layoutY="231.0" mnemonicParsing="false" onAction="#regresarConsultar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="registrarBtn" layoutX="670.0" layoutY="231.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+      <Button fx:id="registrarAlimentoBtn" layoutX="600.0" layoutY="230.0" mnemonicParsing="false" onAction="#registrarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar Alimento">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>

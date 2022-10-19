@@ -53,16 +53,6 @@
          </font>
       </Label>
       <ComboBox fx:id="generoMedicoCb" layoutX="244.0" layoutY="221.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona el genero del Medico" />
-      <Button fx:id="cerrarBtn" layoutX="33.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="registrarBtn" layoutX="604.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="32.0" layoutY="344.0" text="No. Cedula Profesional">
          <font>
             <Font name="Century Gothic" size="18.0" />
@@ -110,5 +100,15 @@
       </Label>
       <ComboBox fx:id="rolCb" layoutX="244.0" layoutY="423.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona el rol del Medico" />
       <DatePicker fx:id="fechaNacMedicoDp" layoutX="244.0" layoutY="179.0" prefHeight="26.0" prefWidth="438.0" promptText="Selecciona la fecha de naciemiento del Medico" />
+      <Button fx:id="regresarBtn" layoutX="32.0" layoutY="468.0" mnemonicParsing="false" onAction="#regresarConsultar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarMedicoBtn" layoutX="547.0" layoutY="468.0" mnemonicParsing="false" onAction="#registrarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar Medico">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

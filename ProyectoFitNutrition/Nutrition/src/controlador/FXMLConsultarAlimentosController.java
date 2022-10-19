@@ -10,13 +10,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.Alimento;
+import util.Utilidades;
 
 /**
  * FXML Controller class
@@ -26,27 +33,27 @@ import modelo.Alimento;
 public class FXMLConsultarAlimentosController implements Initializable {
 
   @FXML
-  private Button cerrarBtn;
-  @FXML
-  private Button buscarAlimentoBtn;
-  @FXML
-  private Button registroAlimentoBtn;
-  @FXML
-  private Button editarAlimentoBtn;
-  @FXML
-  private Button eliminarAlimentoBtn;
-  @FXML
   private TableView<Alimento> table;
   @FXML
-  private TableColumn<Alimento, String> col_nombreAlimento;
+  private TableColumn col_nombreAlimento;
   @FXML
-  private TableColumn<Alimento, String> col_calorias;
+  private TableColumn col_calorias;
   @FXML
-  private TableColumn<Alimento, String> col_cantidad;
+  private TableColumn col_cantidad;
   @FXML
-  private TableColumn<Alimento, String> col_porcion;
+  private TableColumn col_porcion;
   @FXML
   private TextField buscarAlimentoTf;
+  @FXML
+  private Button buscarBtn;
+  @FXML
+  private Button eliminarBtm;
+  @FXML
+  private Button registrarBtn;
+  @FXML
+  private Button modificarBtn;
+  @FXML
+  private Button regresarBtn;
 
   /**
    * Initializes the controller class.
@@ -57,31 +64,49 @@ public class FXMLConsultarAlimentosController implements Initializable {
   }  
 
   @FXML
-  private void consultar(MouseEvent event) {
+  private void buscarAlimento(ActionEvent event) {
   }
 
   @FXML
-  private void regresar(MouseEvent event) {
+  private void eliminarAlimento(ActionEvent event) {
   }
 
   @FXML
-  private void agregar(MouseEvent event) {   
+  private void registrarAlimento(ActionEvent event) {  
+    try {
+      Parent vistaAlimentos = FXMLLoader.load(getClass().getResource("/vista/FXMLRegistrarAlimento.fxml"));
+      Scene escenaPrincipal = new Scene(vistaAlimentos);
+      Stage escenarioRegistro = new Stage();
+      escenarioRegistro.setScene(escenaPrincipal);
+      escenarioRegistro.initModality(Modality.APPLICATION_MODAL);
+      escenarioRegistro.showAndWait();
+      escenarioRegistro.setResizable(false);
+      escenarioRegistro.setTitle("RegistrarMedico");
+      escenarioRegistro.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la registro de alimento", Alert.AlertType.ERROR);
+    }
   }
 
   @FXML
-  private void editar(MouseEvent event) {
+  private void modificarAlimento(ActionEvent event) {
   }
 
   @FXML
-  private void eliminar(MouseEvent event) {
+  private void regresar(ActionEvent event) {
+    try {
+      Parent vistaPrincipal = FXMLLoader.load(getClass().getResource("/vista/FXMLPrincipal.fxml"));
+      Scene escenaPrincipal = new Scene(vistaPrincipal);
+      Stage escenarioBase = new Stage();
+      escenarioBase.setScene(escenaPrincipal);
+      escenarioBase.show();
+      escenarioBase.setResizable(false);
+      escenarioBase.setTitle("Principal");
+      escenarioBase.getIcons().add(new Image("/vista/img/icono.png"));
+    } catch (Exception ex) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al mostrar la pantalla principal", Alert.AlertType.ERROR);
+    }
   }
 
-  @FXML
-  private void agregar(ActionEvent event) {
-  }
-
-  @FXML
-  private void editar(ActionEvent event) {
-  }
   
 }
