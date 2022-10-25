@@ -5,8 +5,14 @@
  */
 package controlador;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,10 +24,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import modelo.Medico;
+import modelo.ConexionServiciosWeb;
+import pojos.Medico;
+import util.Constantes;
 import util.Utilidades;
 
 /**
@@ -63,6 +72,8 @@ public class FXMLConsultarMedicosController implements Initializable {
   private Button modificarBtn;
   @FXML
   private Button registrarBtn;
+  
+  private ObservableList<Medico> listaMedicos;
 
   /**
    * Initializes the controller class.
@@ -71,6 +82,24 @@ public class FXMLConsultarMedicosController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     // TODO
   }  
+  
+  private void configurarTable(){
+    listaMedicos = FXCollections.observableArrayList();
+    col_noPersonal.setCellValueFactory(new PropertyValueFactory("noPersonal"));
+  }
+  
+  private void cargarInfoMedicoWS(){
+    String urlWS = Constantes.URL_BASE+"medicos/all";
+    try {
+      String jsonRespuesta = ConexionServiciosWeb.consumirServicioGET(urlWS);
+      Gson gson = new Gson();
+      Type tipoListaMedico = new TypeToken<List<Medico>>(){}.getType();
+      List medicosWS = gson.fromJson(jsonRespuesta, tipoListaMedico);
+    } catch (Exception e) {
+      Utilidades.mostrarAlertaSimple("Error", "Error al descargar la Información, intentar más tarde", 
+              Alert.AlertType.ERROR);
+    }
+  }
 
   @FXML
   private void buscarMedico(ActionEvent event) {

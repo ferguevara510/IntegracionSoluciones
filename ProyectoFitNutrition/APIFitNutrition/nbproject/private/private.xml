@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/ws/AccesoWS.java</file>
             <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/mybatis/MyBatisUtil.java</file>
             <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/mybatis/mybatis-config.xml</file>
+            <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/pojos/Medico.java</file>
             <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/mybatis/mappers/MedicoMapper.xml</file>
+            <file>file:/D:/Repositorios/IntegracionSoluciones/IntegracionSoluciones/ProyectoFitNutrition/APIFitNutrition/src/java/ws/MedicosWS.java</file>
         </group>
     </open-files>
 </project-private>

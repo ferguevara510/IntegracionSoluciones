@@ -21,13 +21,16 @@ public class Medico {
   private String cedula;
   private String password;
   private Integer idRol;
+  private String rol;
   private Integer idEstatus;
   private Byte[] foto;
 
   public Medico() {
   }
 
-  public Medico(Integer idMedico, String nombre, String apellidoPaterno, String apellidoMaterno, String fechaNacimiento, String genero, String domicilio, String noPersonal, String cedula, String password, Integer idRol, Integer idEstatus, Byte[] foto) {
+  public Medico(Integer idMedico, String nombre, String apellidoPaterno, String apellidoMaterno, 
+          String fechaNacimiento, String genero, String domicilio, String noPersonal, String cedula, 
+          String password, Integer idRol, String rol, Integer idEstatus, Byte[] foto) {
     this.idMedico = idMedico;
     this.nombre = nombre;
     this.apellidoPaterno = apellidoPaterno;
@@ -39,6 +42,7 @@ public class Medico {
     this.cedula = cedula;
     this.password = password;
     this.idRol = idRol;
+    this.rol = rol;
     this.idEstatus = idEstatus;
     this.foto = foto;
   }
@@ -129,6 +133,14 @@ public class Medico {
 
   public void setIdRol(Integer idRol) {
     this.idRol = idRol;
+  }
+
+  public String getRol() {
+    return rol;
+  }
+
+  public void setRol(String rol) {
+    this.rol = rol;
   }
 
   public Integer getIdEstatus() {
