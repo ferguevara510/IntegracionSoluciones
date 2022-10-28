@@ -33,16 +33,6 @@
          </font>
       </TextField>
       <ComboBox fx:id="generoMedicoCb" layoutX="244.0" layoutY="220.0" prefHeight="26.0" prefWidth="346.0" />
-      <Button fx:id="cerrarBtn" layoutX="25.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editarBtn" layoutX="531.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <TextField fx:id="domicilioMedicoTf" layoutX="244.0" layoutY="260.0" prefHeight="28.0" prefWidth="346.0" style="-fx-background-color: #EFEBE9;">
          <font>
             <Font name="Century Gothic" size="14.0" />
@@ -110,5 +100,15 @@
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="regresarBtn" layoutX="23.0" layoutY="472.0" mnemonicParsing="false" onAction="#regresarConsultar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificarMedicoBtn" layoutX="449.0" layoutY="472.0" mnemonicParsing="false" onAction="#modificarMedico" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Modificar Medico">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

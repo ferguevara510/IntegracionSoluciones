@@ -53,16 +53,6 @@
          </font>
       </Label>
       <ComboBox fx:id="generoPacienteCb" layoutX="242.0" layoutY="218.0" prefHeight="26.0" prefWidth="410.0" promptText="Selecciona el genero del Paciente" />
-      <Button fx:id="cerrarBtn" layoutX="25.0" layoutY="633.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="registroPacienteBtn" layoutX="574.0" layoutY="633.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="27.0" layoutY="341.0" prefHeight="23.0" prefWidth="196.0" text="Talla Incial">
          <font>
             <Font name="Century Gothic" size="18.0" />
@@ -150,5 +140,15 @@
          </font>
       </TextField>
       <DatePicker fx:id="fechaNacPacienteDp" layoutX="242.0" layoutY="178.0" prefHeight="26.0" prefWidth="410.0" promptText="Selecciona la fecha de naciemiento del Paciente" />
+      <Button fx:id="regresarBtn" layoutX="25.0" layoutY="627.0" mnemonicParsing="false" onAction="#regresarConsultar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarPacienteBtn" layoutX="509.0" layoutY="627.0" mnemonicParsing="false" onAction="#registrarPaciente" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar Paciente">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

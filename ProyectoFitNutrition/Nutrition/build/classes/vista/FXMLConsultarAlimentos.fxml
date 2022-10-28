@@ -27,31 +27,6 @@
             <Font name="Century Gothic" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="buscarAlimentoBtn" layoutX="865.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#consultar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="cerrarBtn" layoutX="22.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="registroAlimentoBtn" layoutX="696.0" layoutY="579.0" mnemonicParsing="false" onAction="#agregar" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editarAlimentoBtn" layoutX="785.0" layoutY="579.0" mnemonicParsing="false" onAction="#editar" onMouseClicked="#editar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="eliminarAlimentoBtn" layoutX="855.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#eliminar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <TableView fx:id="table" layoutX="22.0" layoutY="126.0" prefHeight="435.0" prefWidth="908.0" style="-fx-background-color: #EFEBE9#FFCC80;">
          <columns>
             <TableColumn fx:id="col_nombreAlimento" prefWidth="325.5999565124512" text="Nombre de Alimento" />
@@ -60,5 +35,30 @@
             <TableColumn fx:id="col_porcion" minWidth="0.0" prefWidth="187.99993896484375" text="Porción" />
          </columns>
       </TableView>
+      <Button fx:id="buscarBtn" layoutX="865.0" layoutY="82.0" mnemonicParsing="false" onAction="#buscarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminarBtm" layoutX="861.0" layoutY="575.0" mnemonicParsing="false" onAction="#eliminarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarBtn" layoutX="685.0" layoutY="575.0" mnemonicParsing="false" onAction="#registrarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificarBtn" layoutX="771.0" layoutY="575.0" mnemonicParsing="false" onAction="#modificarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Modificar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="regresarBtn" layoutX="22.0" layoutY="577.0" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

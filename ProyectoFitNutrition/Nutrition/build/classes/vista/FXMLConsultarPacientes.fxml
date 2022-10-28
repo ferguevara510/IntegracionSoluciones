@@ -27,31 +27,6 @@
             <Font name="Century Gothic" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="buscarEmpleadoBtn" layoutX="1249.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#consultar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="cerrarBtn" layoutX="22.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="registroPacienteBtn" layoutX="1071.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editarPacienteBtn" layoutX="1160.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="eliminarPacienteBtn" layoutX="1230.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#eliminar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <TableView fx:id="table" layoutX="19.0" layoutY="125.0" prefHeight="435.0" prefWidth="1295.0" style="-fx-background-color: #EFEBE9#FFCC80;">
          <columns>
             <TableColumn fx:id="col_nombrePaciente" prefWidth="160.79999351501465" text="Nombre" />
@@ -66,5 +41,30 @@
             <TableColumn fx:id="col_medico" minWidth="0.0" prefWidth="149.5999755859375" text="Medico" />
          </columns>
       </TableView>
+      <Button fx:id="buscarBtn" layoutX="1249.0" layoutY="77.0" mnemonicParsing="false" onAction="#buscarPaciente" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Buscar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminarBtn" layoutX="1245.0" layoutY="574.0" mnemonicParsing="false" onAction="#eliminarPaciente" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Eliminar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificarBtn" layoutX="1157.0" layoutY="574.0" mnemonicParsing="false" onAction="#modificarPaciente" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Modificar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="regresarBtn" layoutX="19.0" layoutY="575.0" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="registrarBtn" layoutX="1073.0" layoutY="574.0" mnemonicParsing="false" onAction="#registrarPaciente" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Registrar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

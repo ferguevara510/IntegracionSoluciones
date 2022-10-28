@@ -21,5 +21,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   </environments>  
   <mappers>
     <mapper resource="mybatis/mappers/MedicoMapper.xml"/>
+    <mapper resource="mybatis/mappers/CatalogoMapper.xml"/>
   </mappers>  
 </configuration>

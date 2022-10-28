@@ -18,7 +18,7 @@ import java.net.URL;
  * @author heand
  */
 public class ConexionServiciosWeb {
-    public static String consumirServicioGet(String url) throws Exception{
+    public static String consumirServicioGET(String url) throws Exception{
         String resultado = "";
         URL urlServicio = new URL(url);
         HttpURLConnection conexionHTTP = (HttpURLConnection) urlServicio.openConnection(); //poder abrir la conexion que yo estoy abriendo, httpurlconnection esa es la que espera en el casteo

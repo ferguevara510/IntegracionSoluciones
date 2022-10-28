@@ -5,8 +5,15 @@
  */
 package controlador;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +28,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modelo.ConexionServiciosWeb;
 import modelo.enums.GeneroEnum;
 import modelo.enums.RolEnum;
+import pojos.Catalogo;
+import util.Constantes;
 import util.Utilidades;
 
 /**
@@ -33,7 +43,7 @@ import util.Utilidades;
 public class FXMLRegistrarMedicoController implements Initializable {
 
   @FXML
-  private ComboBox<RolEnum> rolCb;
+  private ComboBox<Catalogo> rolCb;
   @FXML
   private ComboBox<GeneroEnum> generoMedicoCb;
   @FXML
@@ -55,6 +65,7 @@ public class FXMLRegistrarMedicoController implements Initializable {
   @FXML
   private Button registrarMedicoBtn;
   
+  ObservableList<Catalogo> listaCatalogo = FXCollections.observableArrayList();
 
   /**
    * Initializes the controller class.
@@ -62,8 +73,23 @@ public class FXMLRegistrarMedicoController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle rb) {
     generoMedicoCb.getItems().addAll(GeneroEnum.values());
-    rolCb.getItems().addAll(RolEnum.values());
+    //rolCb.getItems().addAll(RolEnum.values());
+    obtenerRolesWS();
   }  
+  
+  public void obtenerRolesWS(){
+    String url = Constantes.URL_BASE+"catalogos/byCategoria/1";
+    try {
+      String jsonRespuesta = ConexionServiciosWeb.consumirServicioGET(url);
+      Gson gson = new Gson();
+      Type tipoListaCatalogo = new TypeToken<List<Catalogo>>(){}.getType();
+      ArrayList<Catalogo> listaWS = gson.fromJson(jsonRespuesta, tipoListaCatalogo);
+      listaCatalogo.addAll(listaWS);
+      rolCb.setItems(listaCatalogo);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
   @FXML
   private void regresarConsultar(ActionEvent event) {
@@ -84,6 +110,7 @@ public class FXMLRegistrarMedicoController implements Initializable {
 
   @FXML
   private void registrarMedico(ActionEvent event) {
+    
   }
   
 }

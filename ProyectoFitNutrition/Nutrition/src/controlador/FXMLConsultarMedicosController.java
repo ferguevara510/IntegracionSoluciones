@@ -80,7 +80,8 @@ public class FXMLConsultarMedicosController implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-    // TODO
+    configurarTable();
+    cargarInfoMedicoWS();
   }  
   
   private void configurarTable(){
@@ -95,6 +96,8 @@ public class FXMLConsultarMedicosController implements Initializable {
       Gson gson = new Gson();
       Type tipoListaMedico = new TypeToken<List<Medico>>(){}.getType();
       List medicosWS = gson.fromJson(jsonRespuesta, tipoListaMedico);
+      listaMedicos.addAll(medicosWS);
+      table.setItems(listaMedicos);
     } catch (Exception e) {
       Utilidades.mostrarAlertaSimple("Error", "Error al descargar la Información, intentar más tarde", 
               Alert.AlertType.ERROR);

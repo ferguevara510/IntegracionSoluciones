@@ -21,16 +21,6 @@
             <Image url="@img/icono.png" />
          </image>
       </ImageView>
-      <Button fx:id="cerrarBtn" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#regresar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editarBtn" layoutX="684.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#agregar" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Editar">
-         <font>
-            <Font name="Century Gothic" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="27.0" layoutY="164.0" prefHeight="23.0" prefWidth="187.0" text="Cantidad">
          <font>
             <Font name="Century Gothic" size="18.0" />
@@ -67,5 +57,15 @@
          </font>
       </Label>
       <ComboBox fx:id="porcionCb" layoutX="397.0" layoutY="189.0" prefHeight="26.0" prefWidth="346.0" />
+      <Button fx:id="modificarAlimentoBtn" layoutX="594.0" layoutY="229.0" mnemonicParsing="false" onAction="#modificarAlimento" style="-fx-background-color: #9cf79d; -fx-background-radius: 55;" text="Modificar Alimento">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="regresarBtn" layoutX="26.0" layoutY="230.0" mnemonicParsing="false" onAction="#regresarConsultar" style="-fx-background-color: #efec3f; -fx-background-radius: 55;" text="Regresar">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

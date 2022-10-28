@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="714.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLRegistrarMedicoController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #d6fafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLRegistrarMedicoController">
    <children>
       <Label layoutX="114.0" layoutY="18.0" prefHeight="64.0" prefWidth="255.0" text="FitNutrition" textFill="#0273ee">
          <font>
