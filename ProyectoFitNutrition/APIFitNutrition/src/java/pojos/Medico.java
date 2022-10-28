@@ -21,13 +21,23 @@ public class Medico {
   private String cedula;
   private String password;
   private Integer idRol;
+<<<<<<< HEAD
   private Integer idEstatus;
+=======
+  private String rol;
+>>>>>>> main
   private Byte[] foto;
 
   public Medico() {
   }
 
+<<<<<<< HEAD
   public Medico(Integer idMedico, String nombre, String apellidoPaterno, String apellidoMaterno, String fechaNacimiento, String genero, String domicilio, String noPersonal, String cedula, String password, Integer idRol, Integer idEstatus, Byte[] foto) {
+=======
+  public Medico(Integer idMedico, String nombre, String apellidoPaterno, String apellidoMaterno, 
+          String fechaNacimiento, String genero, String domicilio, String noPersonal, String cedula, 
+          String password, Integer idRol, String rol, Byte[] foto) {
+>>>>>>> main
     this.idMedico = idMedico;
     this.nombre = nombre;
     this.apellidoPaterno = apellidoPaterno;
@@ -39,7 +49,11 @@ public class Medico {
     this.cedula = cedula;
     this.password = password;
     this.idRol = idRol;
+<<<<<<< HEAD
     this.idEstatus = idEstatus;
+=======
+    this.rol = rol;
+>>>>>>> main
     this.foto = foto;
   }
 
@@ -131,12 +145,21 @@ public class Medico {
     this.idRol = idRol;
   }
 
+<<<<<<< HEAD
   public Integer getIdEstatus() {
     return idEstatus;
   }
 
   public void setIdEstatus(Integer idEstatus) {
     this.idEstatus = idEstatus;
+=======
+  public String getRol() {
+    return rol;
+  }
+
+  public void setRol(String rol) {
+    this.rol = rol;
+>>>>>>> main
   }
 
   public Byte[] getFoto() {
@@ -146,5 +169,10 @@ public class Medico {
   public void setFoto(Byte[] foto) {
     this.foto = foto;
   }
+<<<<<<< HEAD
 
+=======
+  
+  
+>>>>>>> main
 }

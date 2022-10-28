@@ -8,13 +8,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     SELECT idMedico, medico.nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, idRol, catalogo.nombre as 'rol'
     FROM medico
     INNER JOIN catalogo
+<<<<<<< HEAD
     ON medico.idRol = catalogo.idCatalogo WHERE idEstatus = 201
   </select>
   
   <select id="getByid" resultType="pojos.Medico" parameterType="int">
+=======
+    ON medico.idRol = catalogo.idCatalogo
+  </select>
+  
+  <select id="getByid" resultType="pojos.Medico" parameterType="">
+>>>>>>> main
     SELECT * 
     FROM medico
     WHERE idMedico = 1 #{id}    
   </select>
+<<<<<<< HEAD
   
+=======
+>>>>>>> main
 </mapper>
